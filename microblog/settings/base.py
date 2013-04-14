@@ -1,4 +1,5 @@
 import os
+import sys
 
 here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 PROJECT_ROOT = here("..")
@@ -149,6 +150,11 @@ LOGGING = {
             'class': 'logging.handlers.WatchedFileHandler',
             'filename': root('..', 'logs', 'microblog.log')
         },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout
+        },
     },
     'loggers': {
         'django.request': {
@@ -157,7 +163,7 @@ LOGGING = {
             'propagate': True,
         },
         'django': {
-            'handlers': ['logfile'],
+            'handlers': ['logfile', 'console'],
             'level': 'ERROR',
             'propagate': False,
         },
