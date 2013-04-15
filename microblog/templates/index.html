@@ -1,1 +1,8 @@
-<h1>Hola!</h1>
+{% extends '_layouts/base.html' %}
+
+{% block page_title %}Welcome to my blog{% endblock %}
+
+{% block page_content %}
+<h1>Blog Posts</h1>
+<a href="{% url 'posts:list' %}">Post list</a>
+{% endblock %}
