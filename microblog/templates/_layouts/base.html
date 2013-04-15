@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>{% block page_title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ STATIC_URL}}css/bootstrap.min.css"/>
     </head>
     <body>
-        <h1>Welcome!</h1>
-        {% block page_content %}{% endblock %}
+        <div class="container">
+            <h1>Welcome!</h1>
+            {% block page_content %}{% endblock %}
+        </div>
     </body>
 </html>
