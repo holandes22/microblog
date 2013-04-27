@@ -135,6 +135,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'south',
     'storages',
+    'gunicorn',
 )
 
 LOCAL_APPS = (
